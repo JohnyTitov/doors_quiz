@@ -1,0 +1,156 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="shortcut icon" href="{% static 'dveri/img/logo.ico' %}" type="image/x-icon">
+	<title>Двери в {{ visitka.city_title }}</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'dveri/style.css' %}">
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+	<script src="{% static 'bootstrap/popper.min.js' %}"></script>
+	<link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+	<script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'dveri/calc.js' %}"></script>
+</head>
+
+<body>
+	<!-- Изображение на заднем фоне -->
+	<div class="container-fluid p-0 back-img" >
+	</div>
+
+	<div class="container pt-4">
+		<div class="row">
+			<div class="col-sm">
+				<div class="container-fluid p-0">
+					<div class="row">
+						<div class="col-sm p-0">
+							<!-- Логотип -->
+							<div class="d-flex justify-content-sm-start justify-content-center">
+								<img src="{{ visitka.logo.url }}"> 
+							</div>
+
+						</div>
+						<div class="col-sm">
+							<!-- Адресс -->
+							<div class="d-flex justify-content-sm-start justify-content-center">
+								<table>
+									<tr>
+										<td><img src="{% static 'dveri/img/geo-48.png' %}" class="d-sm-block d-none"></td>
+										<td>{{ visitka.adress }}</td>
+									</tr>
+								</table>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<!-- Блок с контентом -->
+						<div class="col" style="height: 800px; border: 4px double black; margin-top: 30px; ">
+
+							<a href="/{{ url_name }}/contact">Оставить заявку</a>
+							
+							<!--
+							<form action="" method="POST">
+							<div class ="Tip">
+								<p>Тип двери</p>
+								<p id = "1"><input name = "Calc"  type="radio" value="Vhodn">Входные</p>
+								<p id = "2"><input name = "Calc"  type="radio" value="MezhKom">Межкомнатные</p>
+							</div>
+							<div class="Kak" style="display: none;">
+								<p>Какую дверь хотите?</p>
+								<p id = "3"><input name = "Calc2" type="radio" value="Rasp">Распашные</p>
+								<p id = "4"><input name = "Calc2" type="radio" value="DvKn">Дверь-Книжка</p>
+								<p id = "5"><input name = "Calc2" type="radio" value="DvPin">Дверь-Пинал</p>
+							</div>
+							<div class="Nazn" style="display: none;">
+								<p>Назначение двери</p>
+								<p id = "6"><input name = "Calc1" type="radio" value="Kvart">Квартира</p>
+								<p id = "7"><input name = "Calc1" type="radio" value="Dom">Частный дом</p>
+								<p id = "8"><input name = "Calc1" type="radio" value="Kott">Коттедж</p>
+								<p id = "9"><input name = "Calc1" type="radio" value="Office">Офис</p>
+								<p id = "10"><input name = "Calc1" type="radio" value="Pod">Подъезд</p>
+							</div>
+							<div class="VheshOtd" style="display: none;">
+								<p>Какая внешняя отделка наиболее привлекательна?</p>
+								<p id = "11"><input name = "Calc1" type="radio" value="VinKozh">Винилискожа</p>
+								<p id = "12"><input name = "Calc1" type="radio" value="LamPan">Ламинированная панель</p>
+								<p id = "13"><input name = "Calc1" type="radio" value="Nitro">Нитроэмаль</p>
+							</div>
+							<div class="KolvoDv" style="display: none;">
+								<p>Количество дверей</p>
+								<p id = "14"><input name = "Calc2" type="radio" value="One">1</p>
+								<p id = "15"><input name = "Calc2" type="radio" value="Two">2</p>
+								<p id = "16"><input name = "Calc2" type="radio" value="Three">3 и более</p>
+							</div>
+							<div class="VnutOtd" style="display: none;">
+								<p>Какая внутренняя отделка наиболее привлекательна?</p>
+								<p id = "17"><input name = "Calc1" type="radio" value="VinKozh">Винилискожа</p>
+								<p id = "18"><input name = "Calc1" type="radio" value="LamPan">Ламинированная панель</p>
+								<p id = "19"><input name = "Calc1" type="radio" value="Nitro">Нитроэмаль</p>
+							</div>
+							<div class="Pokr" style="display: none;">
+								<p>Какой тип покрытия наиболее привлекателен?</p>
+								<p id = "20"><input name = "Calc2" type="radio" value="NatShp">Натуральный шпон</p>
+								<p id = "21"><input name = "Calc2" type="radio" value="Emal">Эмаль</p>
+								<p id = "22"><input name = "Calc2" type="radio" value="EmShp">Эмаль по шпону</p>
+								<p id = "23"><input name = "Calc2" type="radio" value="Akril">Акрил</p>
+							</div>
+							<div class="VhDop" style="display: none;">
+								<p>Дополнительные комплектующие</p>
+								<p id = "24"><input name = "Calc1" type="radio" value="NerPor">Нержавеющий порог</p>
+								<p id = "25"><input name = "Calc1" type="radio" value="DvOtb">Дверной отбойник</p>
+								<p id = "26"><input name = "Calc1" type="radio" value="DecOtc">Декоративные откосы</p>
+							</div>
+							<div class="MezhDop" style="display: none;">
+								<p>Дополнительные комплектующие</p>
+								<p id = "24"><input name = "Calc2" type="radio" value="Nal">Наличники</p>
+								<p id = "25"><input name = "Calc2" type="radio" value="Kor">Коробки</p>
+								<p id = "26"><input name = "Calc2" type="radio" value="Monoblok">Моноблок для компланарной системы</p>
+							</div>
+							<div class="Cost" style="display: none;">
+								<p>Как вы хотите узнать стоимость?</p>
+								<p id = "27"><input name = "Calc3" type="radio" value="Nal">Позвоните мне</p>
+								<p id = "28"><input name = "Calc3" type="radio" value="Kor">Пришлите на WhatsApp</p>
+								<p id = "29"><input name = "Calc3" type="radio" value="Monoblok">Отправьте СМС</p>
+							</div>
+							<div class="Answer" style="display: none;">
+								<p>Спасибо за оставление заявки, наш менеджер свяжется с Вами в ближайшее время.</p>
+							</div>
+							<input type="button" id="Back" value="Назад" onclick="backmagic()" />
+							<input type="button" id="Next" value="Далее" onclick="magic()" />
+						</form>
+					-->
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-6 p-0">
+			<div class="container-fluid">
+				<div class="row justify-content-lg-end justify-content-center">
+					<!-- Номер телефона -->
+					<table style="text-align: right;">
+						<tr>
+							<td>
+								<a href="https://vvs-soft.ru"><img src="{% static 'dveri/img/tel-orange.png' %}" ></a>
+								{{ visitka.mobile_number }}
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<a href="https://vvs-soft.ru">Заказать звонок</a>
+							</td>
+
+						</tr>
+					</table>				
+
+				</div>
+				<div class="row ">
+					<img src="{% static 'dveri/img/dver4.png' %}" class="img-fluid" style="padding: 70px; margin-top: 0px; ">
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+</body>
+</html>
