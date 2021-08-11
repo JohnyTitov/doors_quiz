@@ -1,7 +1,9 @@
 this libraries must be installed in the project:
 
-django
-django-bootstrap4
+pip install django
+pip install django-bootstrap4
+pip install django-phonenumber-field[phonenumbers]
+pip install Pillow
 
 For send messages on e-mail write this code in settings.py:
 
