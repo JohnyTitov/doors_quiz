@@ -1,26 +1,21 @@
-# Quiz for door shop
-1)  First, you need to install the necessary libraries.
-    To do this, enter the following into the terminal:
+## Quiz for door stores
+1.  Install this libraries to your python path.
+    
+        pip install django  
+        pip install django-bootstrap4  
+        pip install django-phonenumber-field[phonenumbers]  
+        pip install Pillow  
 
-pip install django
-pip install django-bootstrap4
-pip install django-phonenumber-field[phonenumbers]
-pip install Pillow
+2.  Create `migrations` in the database. Then create a `superuser`.       
+        
+        python manage.py migrate
+        python manage.py createsuperuser
 
-2)  After that, you need to make the migration with the command:
-python manage.py migrate
+3. For send messages on e-mail write this code in settings.py:
 
-3)  Then you need to create a superuser:
-python manage.py createsuperuser
-
-4)  Now the project can be started:
-python manage.py runserver
-
-5)  For send messages on e-mail write this code in settings.py:
-
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 465
-EMAIL_HOST_USER = "your_email@gmail.com"
-EMAIL_HOST_PASSWORD = "your_password"
-EMAIL_USE_SSL = True
+        EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+        EMAIL_HOST = 'smtp.gmail.com'
+        EMAIL_PORT = 465
+        EMAIL_HOST_USER = "your_email@gmail.com"
+        EMAIL_HOST_PASSWORD = "your_password"
+        EMAIL_USE_SSL = True
