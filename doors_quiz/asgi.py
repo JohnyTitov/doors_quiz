@@ -1,5 +1,5 @@
 """
-ASGI config for dveri_visitka project.
+ASGI config for doors_quiz project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.asgi import get_asgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'dveri_visitka.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'doors_quiz.settings')
 
 application = get_asgi_application()

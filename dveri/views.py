@@ -6,6 +6,7 @@ from django.core.mail import send_mail, BadHeaderError
 from .forms import CalcForm
 from .models import visitka
 
+
 def ShowPage(request, url_name):
     # получаем все страницы с таким именем
     page = visitka.objects.filter(name_page=url_name)
@@ -15,6 +16,7 @@ def ShowPage(request, url_name):
         return render(request, 'dveri/index.html', {'visitka': infa, 'url_name': url_name})
     else:
         return HttpResponseNotFound('')
+
 
 ''' Метод для формирования сообщения из данных формы '''
 def MessageInForm(form):

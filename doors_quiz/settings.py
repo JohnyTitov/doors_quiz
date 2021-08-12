@@ -42,7 +42,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'dveri_visitka.urls'
+ROOT_URLCONF = 'doors_quiz.urls'
 
 TEMPLATES = [
     {
@@ -60,7 +60,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'dveri_visitka.wsgi.application'
+WSGI_APPLICATION = 'doors_quiz.wsgi.application'
 
 
 # Database

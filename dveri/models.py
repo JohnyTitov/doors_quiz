@@ -1,6 +1,7 @@
 from django.db import models
 from phonenumber_field.modelfields import PhoneNumberField
 
+
 class visitka(models.Model):
     name_page = models.CharField(verbose_name='Имя страницы', max_length=30, unique="True", blank="True")
     logo = models.ImageField(verbose_name='Логотип компании', upload_to='logo/')

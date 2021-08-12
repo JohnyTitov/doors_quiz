@@ -14,6 +14,7 @@ DOP_INTERROOM = [('Наличники', 'Наличники'), ('Коробки'
 
 COMMUNICATION_METHOD = [('По телефону', 'Позвоните мне'), ('WhatsApp', 'Пришлите на WhatsApp'), ('SMS', 'Отправьте СМС'), ]
 
+
 class CalcForm(forms.Form):
 
     type_door = forms.ChoiceField(
