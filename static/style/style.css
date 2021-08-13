@@ -3,7 +3,6 @@
 	background-image: url("../img/background.jpg");
 	background-size: auto 100%;
 	background-repeat: no-repeat;
-	
 }
 /* Чёрная полоса над текстом */
 #black-line {
@@ -14,19 +13,93 @@ margin-bottom: 20px;
 margin-top: 20px;
 }
 
+/* контейнер кнопки "Подобрать"  */
+#button-container {
+text-align: center;
+max-width: 350px;
+margin-left: auto;
+margin-right: auto;
+}
+
 /* Кнопка "Подобрать"  */
 #main-button {
 	border-radius: 2.25rem;
 	padding: 20px; 
 	font-size: 20px;
-	padding-left: 30px;
-	padding-right: 30px;
+	max-width: 350px;
 }
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 991px) {
 	#main-image 
 	{
 		background-image: url("../img/background.jpg");
 		background-size: 150% auto;
 	}
+}
+
+.custom-btn {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: row nowrap;
+    flex-flow: row nowrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 100%;
+    height: 58px;
+    padding-top: 2px;
+    border: none;
+    border-bottom: 2px solid #beb038;
+    position: relative;
+    font-size: 15px;
+    font-weight: bold;
+    color: #000;
+    text-align: center;
+    text-transform: uppercase;
+    cursor: pointer;
+    overflow: hidden;
+    background: #f3d429;
+    -webkit-transition: ease 0.3s;
+    transition: ease 0.3s;
+}
+.custom-btn:after {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 300px;
+    margin-left: 60px;
+    background: #fff;
+    background: -moz-linear-gradient(top, rgba(255,255,255,0.7) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,0.7) 100%);
+    background: -webkit-linear-gradient(top, rgba(255,255,255,0.7) 0%,rgba(255,255,255,1) 50%,rgba(255,255,255,0.7) 100%);
+    background: linear-gradient(to bottom, rgba(255,255,255,0.7) 0%,rgba(255,255,255,1) 50%,rgba(255,255,255,0.7) 100%);
+    position: absolute;
+    left: -40px;
+    top: -150px;
+    z-index: 1;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    -webkit-transition: all 0.1s;
+    transition: all 0.1s;
+    -webkit-animation-name: slideme;
+    animation-name: slideme;
+    -webkit-animation-duration: 3s;
+    animation-duration: 3s;
+    -webkit-animation-delay: 0.05s;
+    animation-delay: 0.05s;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes slideme {
+    0% { left: -30px; margin-left: 0px; }
+    30% { left: 110%; margin-left: 80px; }
+    100% { left: 110%; margin-left: 80px; }
 }
