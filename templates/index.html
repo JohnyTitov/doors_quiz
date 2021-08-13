@@ -8,10 +8,21 @@
     {% bootstrap_css %}
     {% bootstrap_javascript jquery='full' %}
     {% bootstrap_messages %}
+    <link rel="stylesheet" type="text/css" href="{% static 'style/style.css' %}">
 </head>
 <body>
-<div style = "width: 100vw; height: 100vh; background-color: green;">
 
+<div class="container-fluid" style="height: 100vh; width: 100vw; min-height: 750px;">
+  <div class="row" style="height: 100%;">
+    <!-- Часть окна с изображением -->
+    <div id="main-image" class="col-lg-7">
+    </div>
+    <!-- Часть окна с контентом -->
+    <div class="col-lg-5">
+        
+    </div>
+  </div>
 </div>
+
 </body>
 </html>

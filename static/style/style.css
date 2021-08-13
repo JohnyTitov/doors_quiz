@@ -1,0 +1,15 @@
+#main-image 
+{
+	background-image: url("../img/background.jpg");
+	background-size: auto 100%;
+	background-repeat: no-repeat;
+	
+}
+
+@media screen and (max-width: 991px) {
+	#main-image 
+	{
+		background-image: url("../img/background.jpg");
+		background-size: 150% auto;
+	}
+}
