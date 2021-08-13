@@ -1,12 +1,29 @@
-#main-image 
-{
+/* Изображение с дверью  */
+#main-image {
 	background-image: url("../img/background.jpg");
 	background-size: auto 100%;
 	background-repeat: no-repeat;
 	
 }
+/* Чёрная полоса над текстом */
+#black-line {
+background-color: #363636;
+width: 60px;
+height: 4px;
+margin-bottom: 20px;
+margin-top: 20px;
+}
 
-@media screen and (max-width: 991px) {
+/* Кнопка "Подобрать"  */
+#main-button {
+	border-radius: 2.25rem;
+	padding: 20px; 
+	font-size: 20px;
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+@media screen and (max-width: 992px) {
 	#main-image 
 	{
 		background-image: url("../img/background.jpg");
