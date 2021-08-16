@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <title>Двери в {{ shop.city|default:"вашем городе"  }}</title>
     {% load static %}
+    {% load filters %}
     {% load bootstrap4 %}
     {% bootstrap_css %}
     {% bootstrap_javascript jquery='full' %}
     {% bootstrap_messages %}
+    
     <link rel="stylesheet" type="text/css" href="{% static 'style/style.css' %}">
 </head>
 <body>
@@ -37,8 +39,14 @@
     <!-- Часть окна с контентом -->
     <div class="col-lg-5 ">
         <!-- телефон -->
-        <h3 style="text-align: center; ">{{ shop.phone }}</h3>
-        <div class="d-flex align-items-center" style="height: 100%;">
+        <h3 style="text-align: center; ">
+            <a href="tel:{{ shop.phone }}" style="text-decoration: none;">
+                <img src="{% static 'img/phone.png' %}">
+                {{ shop.phone.as_e164|phone_filter }}
+            </a>
+        </h3>
+        <!-- Контент -->
+        <div class="d-flex align-items-center" style="height: 90%;">
             <div style="margin: 0 auto;" >
                 <div id="black-line"></div>
                 <h1>Ответьте на 4 вопроса и подберите межкомнатную дверь</h1>
