@@ -103,3 +103,9 @@ margin-right: auto;
     30% { left: 110%; margin-left: 80px; }
     100% { left: 110%; margin-left: 80px; }
 }
+
+
+.grid-top{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
