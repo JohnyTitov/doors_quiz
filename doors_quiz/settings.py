@@ -27,7 +27,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'dveri.apps.DveriConfig',
     'pages.apps.PagesConfig',
     'phonenumber_field',
     'bootstrap4',
