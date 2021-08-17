@@ -5,7 +5,7 @@ function btn_action(){
     // сколько времени прошло с начала анимации?
     let timePassed = Date.now() - start;
 
-    if (timePassed >= 2000) {
+    if (timePassed >= 1000) {
       clearInterval(timer); // закончить анимацию через 2 секунды
       return;
     }
@@ -16,6 +16,8 @@ function btn_action(){
 }
 
 function draw(timePassed) {
+ 
+  if(timePassed < 700){
   // Сместить блок с контентом вправа
   let div_content = document.getElementById('content-block');
   div_content.style.left = timePassed * 2 + "px";
@@ -23,11 +25,16 @@ function draw(timePassed) {
   // Сместить блок с картинкой влево
   let div_img = document.getElementById('main-image');
   div_img.style.right = timePassed * 2 + "px";
-
-  // Убрать все стартовые эл-ты со страницы
-  if(timePassed > 1500)
+  }
+  else
   {
+    // Убрать все стартовые эл-ты со страницы
     let start_page = document.getElementById('start-page');
     start_page.style.display = "none";
+
+    // Добавить эл-ты выбора
+    let selection_page = document.getElementById('selection-page');
+    selection_page.style.display = 'block';
+    selection_page.style.opacity = timePassed/1000;
   }
 }
