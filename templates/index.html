@@ -11,11 +11,13 @@
     {% bootstrap_messages %}
     
     <link rel="stylesheet" type="text/css" href="{% static 'style/style.css' %}">
+    <script src="{% static 'script/script.js' %}"></script> 
 </head>
 <body>
 
 <div class="container-fluid" style="height: 100vh; width: 100vw; min-height: 750px;">
-  <div class="row" style="height: 100%; ">
+  <!-- СТАРТОВАЯ СТРАНИЦА -->
+  <div id="start-page" class="row" style="height: 100%; overflow: hidden;">
     <!-- Часть окна с изображением -->
     <div id="main-image" class="col-lg-7">
         
@@ -37,7 +39,7 @@
         </div>
     </div>
     <!-- Часть окна с контентом -->
-    <div class="col-lg-5 ">
+    <div class="col-lg-5 " id="content-block">
         <!-- телефон -->
         <h3 style="text-align: center; ">
             <a href="tel:{{ shop.phone }}" style="text-decoration: none;">
@@ -52,7 +54,7 @@
                 <h1>Ответьте на 4 вопроса и подберите межкомнатную дверь</h1>
                 <p style="color: #7a7a7a; font-size: 24px;">В конце бонус - полный каталог наших дверей</p>
                 <div id = "button-container">
-                    <a id="main-button" class="btn btn-secondary custom-btn" href="#" role="button">Подобрать</a>
+                    <a id="main-button" class="btn btn-secondary custom-btn" role="button" onclick="btn_action();">Подобрать</a>
                 </div>
             </div>
         </div>
