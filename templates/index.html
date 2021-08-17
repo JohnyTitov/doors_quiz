@@ -66,45 +66,45 @@
   <div id="selection-page" style="height: 100%; display: block; opacity: 1; "> <!-- display: none; opacity: 0; --> 
 
     <!-- Выбор стиля двери -->
-    <h1>Какой стиль дверей вам больше нравится?</h1>
-    <h4 style="color: #7a7a7a;" >Чтобы подобрать подходящие варианты, нам нужно знать ваши предпочтения. Пожалуйста, выберите один из стилей</h4>
-    <div class="card-group" style="">
-        <div class="card" style="width: 18rem; margin: 1rem;">
+    <h1 style="padding: 1rem;">Какой стиль дверей вам больше нравится?</h1>
+    <h4 style="color: #7a7a7a; padding: 1rem;" >Чтобы подобрать подходящие варианты, нам нужно знать ваши предпочтения. Пожалуйста, выберите один из стилей</h4>
+    <div class="card-group">
+        <div class="card radio-card">
           <img src="{% static 'img/style/classic.jpg' %}" class="card-img-top" alt="...">
           <div class="card-body">
             <h6 class="card-title">Классический</h6>
           </div>
         </div>
 
-        <div class="card" style="width: 18rem; margin: 1rem;">
+        <div class="card radio-card">
           <img src="{% static 'img/style/modern.jpg' %}" class="card-img-top" alt="...">
           <div class="card-body">
             <h6 class="card-title">Современный</h6>
           </div>
         </div>
 
-        <div class="card" style="width: 18rem; margin: 1rem;">
+        <div class="card radio-card">
           <img src="{% static 'img/style/loft.jpg' %}" class="card-img-top" alt="...">
           <div class="card-body">
             <h6 class="card-title">Лофт</h6>
           </div>
         </div>
 
-        <div class="card" style="width: 18rem; margin: 1rem;">
+        <div class="card radio-card">
           <img src="{% static 'img/style/hi_tech.jpg' %}" class="card-img-top" alt="...">
           <div class="card-body">
             <h6 class="card-title">Хай тек</h6>
           </div>
         </div>
 
-        <div class="card" style="width: 18rem; margin: 1rem;">
+        <div class="card radio-card">
           <img src="{% static 'img/style/another.jpg' %}" class="card-img-top" alt="...">
           <div class="card-body">
             <h6 class="card-title">Другой</h6>
           </div>
         </div>
     </div>
-    <a class="btn btn-secondary" href="#" role="button" style="float: right; margin: 1rem; ">Далее →</a>
+    <a id="continue-btn" class="btn btn-secondary" href="#" role="button" style="float: right; margin: 1rem; ">Далее →</a>
 
   </div>
 </div>

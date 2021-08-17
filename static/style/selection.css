@@ -1,0 +1,17 @@
+/* Карточки с вариантами  */
+.radio-card {
+  width: 18rem;
+  margin: 1rem;
+}
+
+.radio-card:hover {
+  box-shadow: 0 0 5px 2px;
+  cursor:  pointer;
+}
+
+/* Кнопка Далее  */
+#continue-btn {
+  border-radius: 2.25rem;
+  padding: 10px 30px 10px 30px;
+  font-size: 20px;
+}
