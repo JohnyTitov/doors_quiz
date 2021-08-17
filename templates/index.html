@@ -12,6 +12,7 @@
     
     <link rel="stylesheet" type="text/css" href="{% static 'style/style.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'style/selection.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <script src="{% static 'script/script.js' %}"></script> 
 </head>
 <body>
@@ -70,40 +71,56 @@
     <h4 style="color: #7a7a7a; padding: 1rem;" >Чтобы подобрать подходящие варианты, нам нужно знать ваши предпочтения. Пожалуйста, выберите один из стилей</h4>
     <div class="card-group">
         <div class="card radio-card">
-          <img src="{% static 'img/style/classic.jpg' %}" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h6 class="card-title">Классический</h6>
-          </div>
+            <label>
+                <input id="radio1" type="radio" name="fb" value="classic" />
+                <img src="{% static 'img/style/classic.jpg' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h6 class="card-title">Классический</h6>
+                </div>
+            </label>
+        </div>
+        
+        <div class="card radio-card">
+            <label>
+                <input type="radio" name="fb" value="modern"/>
+                <img src="{% static 'img/style/modern.jpg' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h6 class="card-title">Современный</h6>
+                </div>
+            </label>
         </div>
 
         <div class="card radio-card">
-          <img src="{% static 'img/style/modern.jpg' %}" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h6 class="card-title">Современный</h6>
-          </div>
+            <label>
+                <input type="radio" name="fb" value="loft" />
+                <img src="{% static 'img/style/loft.jpg' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h6 class="card-title">Лофт</h6>
+                </div>
+            </label>
         </div>
 
         <div class="card radio-card">
-          <img src="{% static 'img/style/loft.jpg' %}" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h6 class="card-title">Лофт</h6>
-          </div>
+            <label>
+                <input type="radio" name="fb" value="hi_tech" />
+                <img src="{% static 'img/style/hi_tech.jpg' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h6 class="card-title">Хай тек</h6>
+                </div>
+            </label>
         </div>
 
         <div class="card radio-card">
-          <img src="{% static 'img/style/hi_tech.jpg' %}" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h6 class="card-title">Хай тек</h6>
-          </div>
-        </div>
-
-        <div class="card radio-card">
-          <img src="{% static 'img/style/another.jpg' %}" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h6 class="card-title">Другой</h6>
-          </div>
-        </div>
+            <label>
+                <input type="radio" name="fb" value="another" />
+                <img src="{% static 'img/style/another.jpg' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h6 class="card-title">Другой</h6>
+                </div>
+            </div>
+        </label>
     </div>
+
     <a id="continue-btn" class="btn btn-secondary" href="#" role="button" style="float: right; margin: 1rem; ">Далее →</a>
 
   </div>

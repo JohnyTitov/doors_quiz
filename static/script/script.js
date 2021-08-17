@@ -38,3 +38,19 @@ function draw(timePassed) {
     selection_page.style.opacity = timePassed/1000;
   }
 }
+
+// Начало jquery
+$(document).ready(function(){
+
+  // Отлов выбора radio
+  $("#radio1").change(function(){
+      
+      if ($(this).is(':checked')) {
+        $(this).parent().parent().css('box-shadow', '0 0 5px 2px');
+      }
+      else
+      {
+        alert('aa');
+      } 
+  });
+});
