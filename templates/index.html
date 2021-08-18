@@ -65,38 +65,72 @@
 
   <!-- СТРАНИЦА ВЫБОРА -->
   <div id="selection-page" style="height: 100%; display: block; opacity: 1; "> <!-- display: none; opacity: 0; --> 
-
-    <!-- Выбор стиля двери -->
-    <h1 style="padding: 1rem;">Какой стиль дверей вам больше нравится?</h1>
-    <h4 style="color: #7a7a7a; padding: 1rem;" >Чтобы подобрать подходящие варианты, нам нужно знать ваши предпочтения. Пожалуйста, выберите один из стилей</h4>
-
     <form action="" method="post">
         {% csrf_token %}
-        <div class="card-group">
-        {% for radio in form.type_door %}
-            <div class="card radio-card">
-                <label>
-                    {{ radio.tag }}
 
-                    {% if radio.choice_label == "Классический" %}
+        <div id="content_0">
+            <h1 style="padding: 1rem;">Какой стиль дверей вам больше нравится?</h1>
+            <h4 style="color: #7a7a7a; padding: 1rem;" >Чтобы подобрать подходящие варианты, нам нужно знать ваши предпочтения. Пожалуйста, выберите один из стилей</h4>        
+
+            <!-- Выбор стиля двери -->
+            <div class="card-group">
+                {% for radio in form.type_door %}
+                <div class="card radio-card">
+                    <label>
+                        {{ radio.tag }}
+
+                        {% if radio.choice_label == "Классический" %}
                         <img src="{% static 'img/style/classic.jpg' %}" class="card-img-top" alt="...">
-                    {% elif radio.choice_label == "Современный" %}
+                        {% elif radio.choice_label == "Современный" %}
                         <img src="{% static 'img/style/modern.jpg' %}" class="card-img-top" alt="...">
-                    {% elif radio.choice_label == "Лофт" %}
+                        {% elif radio.choice_label == "Лофт" %}
                         <img src="{% static 'img/style/loft.jpg' %}" class="card-img-top" alt="...">
-                    {% elif radio.choice_label == "Хай тек" %}
+                        {% elif radio.choice_label == "Хай тек" %}
                         <img src="{% static 'img/style/hi_tech.jpg' %}" class="card-img-top" alt="...">
-                    {% else %}
+                        {% else %}
                         <img src="{% static 'img/style/another.jpg' %}" class="card-img-top" alt="...">
-                    {% endif %}
-                    <div class="card-body">
-                        <h6 class="card-title">{{ radio.choice_label }}</h6>
-                    </div>
-                </label>
-            </div>         
-            {% endfor %}
+                        {% endif %}
+                        <div class="card-body">
+                            <h6 class="card-title">{{ radio.choice_label }}</h6>
+                        </div>
+                    </label>
+                </div>         
+                {% endfor %}
+            </div>
         </div>
-        <a id="continue-btn" class="btn btn-secondary" href="#" role="button" style="float: right; margin: 1rem; ">Далее →</a>
+
+        <div id="content_1" style="display: none;">
+            <h1 style="padding: 1rem;">Какой оттенок вам подойдёт?</h1>
+            <h4 style="color: #7a7a7a; padding: 1rem;" >Для вас мы сможем сделать двери практически любого цвета, различается только срок изготовления и возможные материалы. Пожалуйста, выберите вариант цвета, наиболее подходящий к вашему интерьеру</h4>  
+
+            <!-- Выбор цвета двери -->
+            <div class="card-group">
+                {% for radio in form.color_door %}
+                <div class="card radio-card">
+                    <label>
+                        {{ radio.tag }}
+
+                        {% if radio.choice_label == "Белый" %}
+                        <img src="{% static 'img/color/white.jpg' %}" class="card-img-top" alt="...">
+                        {% elif radio.choice_label == "Под дерево" %}
+                        <img src="{% static 'img/color/wood.jpg' %}" class="card-img-top" alt="...">
+                        {% elif radio.choice_label == "Чёрный" %}
+                        <img src="{% static 'img/color/black.jpg' %}" class="card-img-top" alt="...">
+                        {% elif radio.choice_label == "Цветной" %}
+                        <img src="{% static 'img/color/fresh.jpg' %}" class="card-img-top" alt="...">
+                        {% else %}
+                        <img src="{% static 'img/color/another.jpg' %}" class="card-img-top" alt="...">
+                        {% endif %}
+                        <div class="card-body">
+                            <h6 class="card-title">{{ radio.choice_label }}</h6>
+                        </div>
+                    </label>
+                </div>         
+                {% endfor %}
+            </div>
+        </div>        
+        <a id="continue-btn" class="btn btn-secondary" role="button" onclick="next_btn();" style="float: right; margin: 1rem; ">Далее 🡢</a>
+        <a id="back-btn" class="btn btn-light" role="button" onclick="back_btn();" style="float: right; margin: 1rem; ">🡠</a>
         <!-- <input type="submit" value="Submit"> -->
     </form>
   </div>

@@ -22,3 +22,11 @@ display: none;
   padding: 10px 30px 10px 30px;
   font-size: 20px;
 }
+
+#back-btn {
+  font-size: 20px;
+  border-radius: 2.25rem;
+  padding: 10px 15px 10px 15px;
+  border-color: #6c757d;
+  color: #6c757d;
+}

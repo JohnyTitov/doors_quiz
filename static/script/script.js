@@ -39,10 +39,50 @@ function draw(timePassed) {
   }
 }
 
+
+
+var contentActive = 0;
+var MaxContent = 4;
+
+// Кнопка "Далее"
+function next_btn() {
+  if(contentActive < MaxContent)
+  {
+    contentActive += 1;
+    draw_active();
+  }
+}
+
+// Кнопка "Назад"
+function back_btn() {
+  if(contentActive > 0)
+  {
+    contentActive -= 1;
+    draw_active();
+  }
+}
+
+// Метод отрисовки активной вкладки
+function draw_active()
+{
+  for (var i = 0; i < MaxContent; i++)
+  {
+    var this_content = document.getElementById('content_' + i);
+    if(i == contentActive)
+    {
+      this_content.style.display = 'block';
+    }
+    else
+    {
+      this_content.style.display = 'none';
+    }
+  }
+}
+
 // Начало jquery
 $(document).ready(function(){
 
-  // Отлов выбора radio
+  // Отлов выбора radio "стиль двери"
   $("input[name='type_door']").change(function(){
     var card = $('.radio-card');
 
@@ -54,4 +94,18 @@ $(document).ready(function(){
     // Добавить тень выбранной карточке
     $(this).parent().parent().css('box-shadow', '0 0 5px 2px');
   });
+
+  // Отлов выбора radio "цвет двери"
+  $("input[name='color_door']").change(function(){
+    var card = $('.radio-card');
+
+    // убрать тень со всех карточек
+    $.each(card, function(index, value){
+      $(this).css('box-shadow', '0 0 0 0');
+    });
+
+    // Добавить тень выбранной карточке
+    $(this).parent().parent().css('box-shadow', '0 0 5px 2px');
+  });
+
 });
