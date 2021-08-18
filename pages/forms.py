@@ -1,4 +1,5 @@
 from django import forms
+from phonenumber_field.formfields import PhoneNumberField
 
 
 class SelectForm(forms.Form):
@@ -26,3 +27,5 @@ class SelectForm(forms.Form):
     type_door = forms.ChoiceField(choices=TYPES, widget=forms.RadioSelect, )
     color_door = forms.ChoiceField(choices=COLORS, widget=forms.RadioSelect, )
     feedback = forms.ChoiceField(choices=FEEDBACK, widget=forms.RadioSelect, )
+    phone = PhoneNumberField(widget=forms.TextInput(attrs={'placeholder': '+7(999) 999 99-99'}),
+                             label="Phone number", required=False)

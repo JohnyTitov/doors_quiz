@@ -23,6 +23,13 @@ display: none;
   font-size: 20px;
 }
 
+/* кнопка "Подтвердить"  */
+#submit-btn {
+  border-radius: 2.25rem;
+  padding: 10px 30px 10px 30px;
+  font-size: 20px;
+}
+
 #back-btn {
   font-size: 20px;
   border-radius: 2.25rem;
@@ -51,4 +58,10 @@ margin: 0.5rem;
 
 .messenger-label input {
   display: none;
+}
+
+#id_phone {
+  width: 100%;
+  height: 50px;
+  margin-top: 50px;
 }

@@ -45,16 +45,29 @@ var contentActive = 0;
 var MaxContent = 4;
 
 // Кнопка "Далее"
-function next_btn() {
-  if(contentActive < MaxContent)
+function next_btn(button) {
+  if(contentActive < MaxContent-1)
   {
     contentActive += 1;
     draw_active();
+  }
+  // скрыть кнопку "Далее" на последнем шаге
+  if(contentActive == MaxContent-1)
+  {
+    button.style.display = 'none';
+    document.getElementById('submit-btn').style.display = 'block';
   }
 }
 
 // Кнопка "Назад"
 function back_btn() {
+  // показать кнопку "Далее" на предпоследнем шаге
+  if(contentActive == MaxContent-1)
+  {
+    document.getElementById('continue-btn').style.display = 'block';
+    document.getElementById('submit-btn').style.display = 'none';
+  }
+
   if(contentActive > 0)
   {
     contentActive -= 1;
