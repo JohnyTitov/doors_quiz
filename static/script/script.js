@@ -43,7 +43,7 @@ function draw(timePassed) {
 $(document).ready(function(){
 
   // Отлов выбора radio
-  $("input[name='fb']").change(function(){
+  $("input[name='type_door']").change(function(){
     var card = $('.radio-card');
 
     // убрать тень со всех карточек
