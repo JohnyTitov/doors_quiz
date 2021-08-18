@@ -6,7 +6,11 @@ from .forms import SelectForm
 
 
 def test_bootstrap(request):
-    return render(request, 'index.html')
+    if request.method == 'GET':
+        form = SelectForm()
+        return render(request, 'index.html', {'form': form,})
+    elif request.method == 'POST':
+        return redirect('/')
 
 
 def show_page(request, url_name):
@@ -24,3 +28,5 @@ def show_page(request, url_name):
             return render(request, 'index.html', param)
         else:
             return redirect('/')
+    elif request.method == 'POST':
+        return redirect('/')
