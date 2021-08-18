@@ -68,10 +68,9 @@
     <form action="" method="post">
         {% csrf_token %}
 
-        <div id="content_0">
-            <h1 style="padding: 1rem;">Какой стиль дверей вам больше нравится?</h1>
+        <div id="content_0" style="display: none;">
+            <h1 class="display-4" style="padding: 1rem;">Какой стиль дверей вам больше нравится?</h1>
             <h4 style="color: #7a7a7a; padding: 1rem;" >Чтобы подобрать подходящие варианты, нам нужно знать ваши предпочтения. Пожалуйста, выберите один из стилей</h4>        
-
             <!-- Выбор стиля двери -->
             <div class="card-group">
                 {% for radio in form.type_door %}
@@ -100,7 +99,7 @@
         </div>
 
         <div id="content_1" style="display: none;">
-            <h1 style="padding: 1rem;">Какой оттенок вам подойдёт?</h1>
+            <h1 class="display-4" style="padding: 1rem;">Какой оттенок вам подойдёт?</h1>
             <h4 style="color: #7a7a7a; padding: 1rem;" >Для вас мы сможем сделать двери практически любого цвета, различается только срок изготовления и возможные материалы. Пожалуйста, выберите вариант цвета, наиболее подходящий к вашему интерьеру</h4>  
 
             <!-- Выбор цвета двери -->
@@ -128,7 +127,52 @@
                 </div>         
                 {% endfor %}
             </div>
-        </div>        
+        </div> 
+
+        <div id="content_2" style="display: block;">
+            <h1 class="display-4" style="padding: 1rem;">Мы рассчитаем стоимость вашей будущей двери</h1>
+            <h4 style="color: #7a7a7a; padding: 1rem;" >Наш менеджер в кратчайшие сроки сделает расчёты и предложит вам несколько вариантов</h4> 
+
+            <!-- Выбор способа обратной связи -->
+            <div style="margin:0 auto; max-width: 800px;" class="jumbotron">
+              <h1 style="text-align: center;">Куда вам отправить сопутствующую информацию?</h1>
+              <div class="container">
+                  <div class="row">
+                    {% for radio in form.feedback %}
+                    <div class="col">
+                        <label class="messenger-label">
+                            {{ radio.tag }}       
+                            <div class="messenger row">
+                                <div class="col-4">
+                                    {% if radio.choice_label == "Telegram" %}
+                                        <img src="{% static 'img/feedback/telegram.svg' %}">
+                                    {% elif radio.choice_label == "Whatsapp" %}
+                                        <img src="{% static 'img/feedback/whatsapp.svg' %}">
+                                    {% elif radio.choice_label == "Пришлите СМС" %}
+                                        <img src="{% static 'img/feedback/sms.svg' %}">
+                                    {% elif radio.choice_label == "Позвоните мне" %}
+                                        <img src="{% static 'img/feedback/phone.svg' %}">
+                                    {% endif %}
+                                </div>
+                                <div class="col-8 d-flex align-items-center" >
+                                    <div style="width: 100%; text-align: center;">
+                                        <p style=" font-size: 1.4rem; ">
+                                            {{ radio.choice_label }}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+                        {% if forloop.counter|module_2 %}
+                            <div class="w-100"></div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div> 
+
         <a id="continue-btn" class="btn btn-secondary" role="button" onclick="next_btn();" style="float: right; margin: 1rem; ">Далее 🡢</a>
         <a id="back-btn" class="btn btn-light" role="button" onclick="back_btn();" style="float: right; margin: 1rem; ">🡠</a>
         <!-- <input type="submit" value="Submit"> -->

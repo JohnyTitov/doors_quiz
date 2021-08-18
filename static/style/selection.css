@@ -30,3 +30,25 @@ display: none;
   border-color: #6c757d;
   color: #6c757d;
 }
+
+.messenger {
+  background-color: #f7f7f7;
+  margin: 0.05rem;
+  padding: 0.7rem;
+  border-radius: 1rem;
+  cursor: pointer; 
+}
+
+.messenger-label:hover {
+  box-shadow: 0 0 5px 2px;
+}
+
+.messenger-label {
+width: 100%; 
+border-radius: 1rem;
+margin: 0.5rem;
+}
+
+.messenger-label input {
+  display: none;
+}

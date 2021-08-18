@@ -16,5 +16,13 @@ class SelectForm(forms.Form):
         ('fresh', 'Цветной'),
         ('another', 'Другой'), ]
 
+    FEEDBACK = [
+        ('telegram', 'Telegram'),
+        ('whatsapp', 'Whatsapp'),
+        ('sms', 'Пришлите СМС'),
+        ('phone', 'Позвоните мне'),
+    ]
+
     type_door = forms.ChoiceField(choices=TYPES, widget=forms.RadioSelect, )
     color_door = forms.ChoiceField(choices=COLORS, widget=forms.RadioSelect, )
+    feedback = forms.ChoiceField(choices=FEEDBACK, widget=forms.RadioSelect, )

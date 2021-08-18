@@ -82,7 +82,7 @@ function draw_active()
 // Начало jquery
 $(document).ready(function(){
 
-  // Отлов выбора radio "стиль двери"
+  //___ Отлов выбора radio "стиль двери" ___\\
   $("input[name='type_door']").change(function(){
     var card = $('.radio-card');
 
@@ -95,7 +95,7 @@ $(document).ready(function(){
     $(this).parent().parent().css('box-shadow', '0 0 5px 2px');
   });
 
-  // Отлов выбора radio "цвет двери"
+  //___ Отлов выбора radio "цвет двери" ___\\
   $("input[name='color_door']").change(function(){
     var card = $('.radio-card');
 
@@ -106,6 +106,19 @@ $(document).ready(function(){
 
     // Добавить тень выбранной карточке
     $(this).parent().parent().css('box-shadow', '0 0 5px 2px');
+  });
+
+  //___ Отлов выбора radio "обратная связь" ___\\
+  $("input[name='feedback']").change(function(){
+    var card = $('.messenger-label');
+
+    // убрать тень со всех карточек
+    $.each(card, function(index, value){
+      $(this).css('box-shadow', '0 0 0 0');
+    });
+
+    // Добавить тень выбранной карточке
+    $(this).parent().css('box-shadow', '0 0 5px 2px');
   });
 
 });
