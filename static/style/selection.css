@@ -12,6 +12,9 @@
 cursor:  pointer;
 }
 
+.radio-card label input {
+display: none;
+}
 
 /* Кнопка Далее  */
 #continue-btn {

@@ -43,14 +43,15 @@ function draw(timePassed) {
 $(document).ready(function(){
 
   // Отлов выбора radio
-  $("#radio1").change(function(){
-      
-      if ($(this).is(':checked')) {
-        $(this).parent().parent().css('box-shadow', '0 0 5px 2px');
-      }
-      else
-      {
-        alert('aa');
-      } 
+  $("input[name='fb']").change(function(){
+    var card = $('.radio-card');
+
+    // убрать тень со всех карточек
+    $.each(card, function(index, value){
+      $(this).css('box-shadow', '0 0 0 0');
+    });
+
+    // Добавить тень выбранной карточке
+    $(this).parent().parent().css('box-shadow', '0 0 5px 2px');
   });
 });
