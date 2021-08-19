@@ -1,6 +1,7 @@
 from django import forms
 from phonenumber_field.formfields import PhoneNumberField
 from phonenumber_field.widgets import PhoneNumberPrefixWidget
+from django.core.validators import DecimalValidator
 
 
 class SelectForm(forms.Form):
@@ -28,5 +29,7 @@ class SelectForm(forms.Form):
     type_door = forms.ChoiceField(choices=TYPES, widget=forms.RadioSelect, )
     color_door = forms.ChoiceField(choices=COLORS, widget=forms.RadioSelect, )
     feedback = forms.ChoiceField(choices=FEEDBACK, widget=forms.RadioSelect, )
-    #phone = PhoneNumberField(widget=forms.TextInput(attrs={'placeholder': '+7(999) 999 99-99'}), )
-    phone = PhoneNumberField(widget=PhoneNumberPrefixWidget(), )
+    phone = PhoneNumberField(widget=PhoneNumberPrefixWidget(initial='RU',
+                             attrs={'placeholder ': '(999)-999-99-99',
+                                    'class': 'phone-field', }),
+                             max_length=10,)

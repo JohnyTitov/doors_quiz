@@ -62,16 +62,24 @@ margin: 0.5rem;
 
 
 
-#id_phone {
-  width: 100%;
+.phone-field {
   height: 50px;
   margin-top: 50px;
-  border-radius: 1rem;
+  border-style: solid;
   outline: none; 
 }
 
-#id_phone:focus {
-  border-radius: 1rem;
-  border-width: medium;
-  border-color: black;
+.phone-field:focus {  
+  border-color: #1e90ff;
+}
+
+#id_phone_0 {
+  width: 20%;
+  border-radius: 0.5rem 0 0 0.5rem;
+  border-right: 0; 
+}
+
+#id_phone_1 {
+  width: 80%; 
+  border-radius: 0 0.5rem 0.5rem 0; 
 }

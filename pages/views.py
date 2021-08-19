@@ -8,9 +8,9 @@ from .forms import SelectForm
 def test_bootstrap(request):
     if request.method == 'GET':
         form = SelectForm()
-        return render(request, 'index.html', {'form': form,})
+        return render(request, 'index.html', {'form': form, })
     elif request.method == 'POST':
-        return redirect('/')
+        return redirect(request.path)
 
 
 def show_page(request, url_name):
@@ -27,6 +27,6 @@ def show_page(request, url_name):
                      'form': form, }
             return render(request, 'index.html', param)
         else:
-            return redirect('/')
+            return redirect(request.path)
     elif request.method == 'POST':
-        return redirect('/')
+        return redirect(request.path)

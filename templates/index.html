@@ -19,7 +19,7 @@
 
 <div class="container-fluid" style="height: 100vh; width: 100vw; min-height: 750px;">
   <!-- СТАРТОВАЯ СТРАНИЦА -->
-  <div id="start-page" class="row" style="height: 100%; overflow: hidden; display: flex;"> <!-- display: flex; -->
+  <div id="start-page" class="row" style="height: 100%; overflow: hidden; display: none;"> <!-- display: flex; -->
     <!-- Часть окна с изображением -->
     <div id="main-image" class="col-lg-7">
         
@@ -64,11 +64,11 @@
   </div>
 
   <!-- СТРАНИЦА ВЫБОРА -->
-  <div id="selection-page" style="height: 100%; display: none; opacity: 0; "> <!-- display: none; opacity: 0; --> 
+  <div id="selection-page" style="height: 100%; display: block; opacity: 1; "> <!-- display: none; opacity: 0; --> 
     <form action="" method="post">
         {% csrf_token %}
 
-        <div id="content_0" style="display: block;">
+        <div id="content_0" style="display: none;">
             <h1 class="display-4" style="padding: 1rem;">Какой стиль дверей вам больше нравится?</h1>
             <h4 style="color: #7a7a7a; padding: 1rem;" >Чтобы подобрать подходящие варианты, нам нужно знать ваши предпочтения. Пожалуйста, выберите один из стилей</h4>        
             <!-- Выбор стиля двери -->
@@ -173,7 +173,8 @@
         </div>
     </div> 
 
-    <div id="content_3" style="display: none;">
+    <div id="content_3" style="display: block;">
+        
         <h1 class="display-4" style="padding: 1rem;">Мы рассчитаем стоимость вашей будущей двери</h1>
         <h4 style="color: #7a7a7a; padding: 1rem;" >Наш менеджер в кратчайшие сроки сделает расчёты и предложит вам несколько вариантов</h4> 
 
