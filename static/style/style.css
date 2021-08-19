@@ -104,8 +104,25 @@ margin-right: auto;
     100% { left: 110%; margin-left: 80px; }
 }
 
-
+/* сетка вверху страницы  */
 .grid-top{
     display: grid;
     grid-template-columns: 1fr 1fr;
+}
+
+/* Логотип */
+.logo-shop {
+    margin: 20px;
+    display: block;
+}
+
+/* Номер телефона */
+.phone-shop {
+    text-align: center;
+    margin: 20px;
+}
+
+.phone-shop a {
+    text-decoration: none;
+    color: #59616a;
 }

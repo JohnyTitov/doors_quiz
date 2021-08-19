@@ -28,14 +28,17 @@
                 <div>
                     <!-- Логотип магазина -->
                     {% if shop.logo %}
-                        <img src="{{ shop.logo.url }}">
+                        <img src="{{ shop.logo.url }}" class="logo-shop">
                     {% else %}
-                        <img src="{% static 'img/default_logo.png' %}">
+                        <img src="{% static 'img/default_logo.png' %}" class="logo-shop" >
                     {% endif %}
                 </div>
                 <div >
                     <!-- адрес -->
-                    <h3 style="text-align: right; ">{{ shop.address }}</h3>
+                    <h3 style="text-align: center; margin: 20px; color: #484f56; ">
+                        <img src="{% static 'img/geo-32.png' %}">
+                        {{ shop.address|default:"В вашем городе" }}
+                    </h3>
                 </div>
             </div>
         </div>
@@ -43,8 +46,8 @@
     <!-- Часть окна с контентом -->
     <div class="col-lg-5 " id="content-block">
         <!-- телефон -->
-        <h3 style="text-align: center; ">
-            <a href="tel:{{ shop.phone }}" style="text-decoration: none;">
+        <h3 class="phone-shop">
+            <a href="tel:{{ shop.phone }}">
                 <img src="{% static 'img/phone.png' %}">
                 {{ shop.phone.as_e164|phone_filter }}
             </a>
