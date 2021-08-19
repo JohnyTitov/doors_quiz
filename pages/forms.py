@@ -26,9 +26,9 @@ class SelectForm(forms.Form):
         ('phone', 'Позвоните мне'),
     ]
 
-    type_door = forms.ChoiceField(choices=TYPES, widget=forms.RadioSelect, )
-    color_door = forms.ChoiceField(choices=COLORS, widget=forms.RadioSelect, )
-    feedback = forms.ChoiceField(choices=FEEDBACK, widget=forms.RadioSelect, )
+    type_door = forms.ChoiceField(choices=TYPES, widget=forms.RadioSelect, required=False, )
+    color_door = forms.ChoiceField(choices=COLORS, widget=forms.RadioSelect, required=False, )
+    feedback = forms.ChoiceField(choices=FEEDBACK, widget=forms.RadioSelect, required=False, )
     phone = PhoneNumberField(widget=PhoneNumberPrefixWidget(initial='RU',
                              attrs={'placeholder ': '(999)-999-99-99',
                                     'class': 'phone-field', }),
