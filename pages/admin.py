@@ -9,9 +9,9 @@ class AdminPageShop(admin.ModelAdmin):
 
 
 class AdminClientChoice(admin.ModelAdmin):
-    list_display = ('phone',)
-    list_display_links = ('phone',)
-    search_fields = ('phone',)
+    list_display = ('phone', 'feedback', 'type_door', 'color_door')
+    list_display_links = ('phone', 'feedback', 'type_door', 'color_door')
+    search_fields = ('phone', 'feedback', 'type_door', 'color_door')
 
 
 admin.site.register(PageShop, AdminPageShop)

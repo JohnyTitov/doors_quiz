@@ -1,6 +1,27 @@
 from django.db import models
 from phonenumber_field.modelfields import PhoneNumberField
 
+TYPES = [
+    ('classic', 'Классический'),
+    ('modern', 'Современный'),
+    ('loft', 'Лофт'),
+    ('hi_tech', 'Хай тек'),
+    ('another', 'Другой'), ]
+
+COLORS = [
+        ('white', 'Белый'),
+        ('wood', 'Под дерево'),
+        ('black', 'Чёрный'),
+        ('fresh', 'Цветной'),
+        ('another', 'Другой'), ]
+
+FEEDBACK = [
+    ('telegram', 'Telegram'),
+    ('whatsapp', 'Whatsapp'),
+    ('sms', 'Пришлите СМС'),
+    ('phone', 'Позвоните мне'),
+]
+
 
 class PageShop(models.Model):
     name_page = models.CharField(verbose_name='Имя страницы', max_length=40, unique=True,)
@@ -20,6 +41,9 @@ class PageShop(models.Model):
 
 class ClientChoice(models.Model):
     phone = PhoneNumberField(verbose_name='Номер телефона')
+    type_door = models.CharField(verbose_name='Тип двери', max_length=50, choices=TYPES, default='another')
+    color_door = models.CharField(verbose_name='Цвет', max_length=50, choices=COLORS, default='another')
+    feedback = models.CharField(verbose_name='Обратная связь', max_length=50, choices=FEEDBACK, default='phone')
 
     def __str__(self):
         return str(self.phone)
