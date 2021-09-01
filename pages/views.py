@@ -5,11 +5,15 @@ from .models import PageShop
 from .forms import SelectForm
 
 
-def test_bootstrap(request):
+def home(request):
     if request.method == 'GET':
         form = SelectForm()
         return render(request, 'index.html', {'form': form, })
+
     elif request.method == 'POST':
+        form = SelectForm(request.POST)
+        if form.is_valid():
+            form.save()
         return redirect(request.path)
 
 

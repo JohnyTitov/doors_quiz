@@ -1,10 +1,14 @@
 from django import forms
+from django.forms import ModelForm
 from phonenumber_field.formfields import PhoneNumberField
 from phonenumber_field.widgets import PhoneNumberPrefixWidget
-from django.core.validators import DecimalValidator
+from .models import ClientChoice
+from django.core.validators import RegexValidator
+
+validate_numeric = RegexValidator(r'^[0-9]*$', 'ввод только цифр!')
 
 
-class SelectForm(forms.Form):
+class SelectForm(ModelForm):
     TYPES = [
         ('classic', 'Классический'),
         ('modern', 'Современный'),
@@ -31,5 +35,11 @@ class SelectForm(forms.Form):
     feedback = forms.ChoiceField(choices=FEEDBACK, widget=forms.RadioSelect, required=False, )
     phone = PhoneNumberField(widget=PhoneNumberPrefixWidget(initial='RU',
                              attrs={'placeholder ': '(999)-999-99-99',
-                                    'class': 'phone-field', }),
-                             max_length=10,)
+                                    'maxlength': '10',
+                                    'class': 'phone-field',
+                                    'pattern': '^[ 0-9]+$', },
+                             ))
+
+    class Meta:
+        model = ClientChoice
+        fields = ['phone', ]

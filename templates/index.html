@@ -68,7 +68,7 @@
 
   <!-- СТРАНИЦА ВЫБОРА -->
   <div id="selection-page" style="height: 100%; display: none; opacity: 0;"> <!-- display: none; opacity: 0; --> 
-    <form action="" method="post">
+    <form method="post">
         {% csrf_token %}
 
         <div id="content_0" style="display: block;">    <!-- display: block; --> 
@@ -171,32 +171,32 @@
                             <div class="w-100"></div>
                         {% endif %}
                     {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div> 
+
+        <div id="content_3" style="display: none;">
+            
+            <h1 class="display-4" style="padding: 1rem;">Мы рассчитаем стоимость вашей будущей двери</h1>
+            <h4 style="color: #7a7a7a; padding: 1rem;" >Наш менеджер в кратчайшие сроки сделает расчёты и предложит вам несколько вариантов</h4> 
+
+            <!-- Ввод мобильного телефона -->
+            <div class="jumbotron jumbo-custom">
+                <h1 style="text-align: center;">Для получения стоимости двери оставьте свои контакты:</h1>
+                {{ form.phone }}
+                <div style="margin-top: 35px; ">
+                    <div style="margin: 0 auto; max-width: 400px;">
+                        <input id="submit-btn" type="submit" value="Подтвердить" class="btn btn-secondary custom-btn" role="button" >
+                    </div>
                 </div>
             </div>
         </div>
-    </div> 
-
-    <div id="content_3" style="display: none;">
-        
-        <h1 class="display-4" style="padding: 1rem;">Мы рассчитаем стоимость вашей будущей двери</h1>
-        <h4 style="color: #7a7a7a; padding: 1rem;" >Наш менеджер в кратчайшие сроки сделает расчёты и предложит вам несколько вариантов</h4> 
-
-        <!-- Ввод мобильного телефона -->
-        <div class="jumbotron jumbo-custom">
-            <h1 style="text-align: center;">Для получения стоимости двери оставьте свои контакты:</h1>
-            {{ form.phone }}
-            <div style="margin-top: 35px; ">
-                <div style="margin: 0 auto; max-width: 400px;">
-                    <input id="submit-btn" type="submit" value="Подтвердить" class="btn btn-secondary custom-btn" role="button" >
-                </div>
-            </div>
-        </div>
-    </div>
-    <footer>
-        
-        <a id="continue-btn" class="btn btn-secondary" role="button" onclick="next_btn(this);" style="float: right; margin: 1rem; ">Далее 🡢</a>
-        <a id="back-btn" class="btn btn-light" role="button" onclick="back_btn();" style="float: right; margin: 1rem; ">🡠</a>
-    </footer>
+        <footer>
+            
+            <a id="continue-btn" class="btn btn-secondary" role="button" onclick="next_btn(this);" style="float: right; margin: 1rem; ">Далее 🡢</a>
+            <a id="back-btn" class="btn btn-light" role="button" onclick="back_btn();" style="float: right; margin: 1rem; ">🡠</a>
+        </footer>
     </form>
   </div>
 </div>

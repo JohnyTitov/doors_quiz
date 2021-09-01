@@ -16,3 +16,14 @@ class PageShop(models.Model):
     class Meta:
         verbose_name = 'Магазин'
         verbose_name_plural = 'Магазины'
+
+
+class ClientChoice(models.Model):
+    phone = PhoneNumberField(verbose_name='Номер телефона')
+
+    def __str__(self):
+        return str(self.phone)
+
+    class Meta:
+        verbose_name = 'Заказ'
+        verbose_name_plural = 'Заказы'
