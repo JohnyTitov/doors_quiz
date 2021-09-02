@@ -9,15 +9,6 @@ validate_numeric = RegexValidator(r'^[0-9]*$', 'ввод только цифр!'
 
 
 class SelectForm(ModelForm):
-
-    FEEDBACK = [
-        ('telegram', 'Telegram'),
-        ('whatsapp', 'Whatsapp'),
-        ('sms', 'Пришлите СМС'),
-        ('phone', 'Позвоните мне'),
-    ]
-
-    #feedback = forms.ChoiceField(choices=FEEDBACK, widget=forms.RadioSelect, required=False, )
     phone = PhoneNumberField(widget=PhoneNumberPrefixWidget(initial='RU',
                              attrs={'placeholder ': '(999)-999-99-99',
                                     'maxlength': '10',
@@ -27,7 +18,7 @@ class SelectForm(ModelForm):
 
     class Meta:
         model = ClientChoice
-        fields = ['phone', 'type_door', 'color_door', 'feedback']
+        fields = ['shop', 'phone', 'type_door', 'color_door', 'feedback']
         widgets = {'type_door': forms.RadioSelect(),
                    'color_door': forms.RadioSelect(),
                    'feedback': forms.RadioSelect(), }

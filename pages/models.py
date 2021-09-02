@@ -9,11 +9,11 @@ TYPES = [
     ('another', 'Другой'), ]
 
 COLORS = [
-        ('white', 'Белый'),
-        ('wood', 'Под дерево'),
-        ('black', 'Чёрный'),
-        ('fresh', 'Цветной'),
-        ('another', 'Другой'), ]
+    ('white', 'Белый'),
+    ('wood', 'Под дерево'),
+    ('black', 'Чёрный'),
+    ('fresh', 'Цветной'),
+    ('another', 'Другой'), ]
 
 FEEDBACK = [
     ('telegram', 'Telegram'),
@@ -40,6 +40,7 @@ class PageShop(models.Model):
 
 
 class ClientChoice(models.Model):
+    shop = models.ForeignKey(PageShop, on_delete=models.CASCADE, verbose_name='Магазин', blank=True, null=True)
     phone = PhoneNumberField(verbose_name='Номер телефона')
     type_door = models.CharField(verbose_name='Тип двери', max_length=50, choices=TYPES, default='another')
     color_door = models.CharField(verbose_name='Цвет', max_length=50, choices=COLORS, default='another')
