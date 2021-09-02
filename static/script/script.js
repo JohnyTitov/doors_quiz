@@ -110,7 +110,7 @@ $(document).ready(function(){
 
   //___ Отлов выбора radio "цвет двери" ___\\
   $("input[name='color_door']").change(function(){
-    var card = $('.radio-card');
+    var card = $('.radio-color');
 
     // убрать тень со всех карточек
     $.each(card, function(index, value){
@@ -122,7 +122,7 @@ $(document).ready(function(){
   });
 
   //___ Отлов выбора radio "обратная связь" ___\\
-  $("input[name='feedback']").change(function(){
+  $("input[name='feedback']").click(function(){
     var card = $('.messenger-label');
 
     // убрать тень со всех карточек

@@ -16,6 +16,24 @@ cursor:  pointer;
 display: none;
 }
 
+/* Карточки выбора цвета  */
+.radio-color {
+  width: 18rem;
+  margin: 1rem;
+}
+
+.radio-color:hover {
+  box-shadow: 0 0 5px 2px;
+}
+
+.radio-color label {
+cursor:  pointer;
+}
+
+.radio-color label input {
+display: none;
+}
+
 /* Кнопка Далее  */
 #continue-btn {
   border-radius: 2.25rem;
