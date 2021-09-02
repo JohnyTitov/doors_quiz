@@ -96,7 +96,7 @@ function draw_active()
 $(document).ready(function(){
 
   //___ Отлов выбора radio "стиль двери" ___\\
-  $("input[name='type_door']").change(function(){
+  $("input[name='type_door']").click(function(){
     var card = $('.radio-card');
 
     // убрать тень со всех карточек
@@ -109,7 +109,7 @@ $(document).ready(function(){
   });
 
   //___ Отлов выбора radio "цвет двери" ___\\
-  $("input[name='color_door']").change(function(){
+  $("input[name='color_door']").click(function(){
     var card = $('.radio-color');
 
     // убрать тень со всех карточек
