@@ -70,7 +70,7 @@
   <div id="selection-page" style="height: 100%; display: none; opacity: 0;"> <!-- display: none; opacity: 0; --> 
     <form method="post">
         {% csrf_token %}
-
+        <div hidden>{{ form.shop }}</div>     <!-- скрытое поле выбора магазина -->
         <div id="content_0" style="display: block;">    <!-- display: block; --> 
             <h1 class="display-4" style="padding: 1rem;">Какой стиль дверей вам больше нравится?</h1>
             <h4 style="color: #7a7a7a; padding: 1rem;" >Чтобы подобрать подходящие варианты, нам нужно знать ваши предпочтения. Пожалуйста, выберите один из стилей</h4>        
